@@ -191,37 +191,37 @@ function checkIfStoppedScrolling() {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    for (var i=0; i<elements.length; i++) {
-        var itm = elements[i]
+    var xhr = new XMLHttpRequest()
+    xhr.open("GET", "/info.json", true)
+    xhr.onload = function() {
+        elements = JSON.parse(xhr.responseText)
+        console.log("loaded")
+    
+        title = elements[0]["title"]
+        paragraph = elements[0]["description"]
 
-        if ("image" in itm) {
-            var img = document.createElement("img")
-            img.src = itm["image"]
-            document.getElementById("fullimgs").appendChild(img)
-        } else {
-            var div = document.createElement("div")
-            div.style.width = "100vw"
-            div.style.height = "100vh"
-            div.style.backgroundColor = itm["color"]
-            document.getElementById("fullimgs").appendChild(div)
+        for (var i=0; i<elements.length; i++) {
+            var itm = elements[i]
+    
+            if ("image" in itm) {
+                var img = document.createElement("img")
+                img.src = itm["image"]
+                document.getElementById("fullimgs").appendChild(img)
+            } else {
+                var div = document.createElement("div")
+                div.style.width = "100vw"
+                div.style.height = "100vh"
+                div.style.backgroundColor = itm["color"]
+                document.getElementById("fullimgs").appendChild(div)
+            }
+    
         }
-
+    
+        setInterval(checkIfStoppedScrolling, 250)
+        setInterval(typeTitle, 150)
+        setInterval(typeParagraph, 25)
     }
+    xhr.send()
 
     document.addEventListener('wheel', handleWheel)
 })
-
-var xhr = new XMLHttpRequest()
-xhr.open("GET", "/info.json", true)
-xhr.onload = function() {
-    elements = JSON.parse(xhr.responseText)
-    console.log("loaded")
-
-    title = elements[0]["title"]
-    paragraph = elements[0]["description"]
-
-    setInterval(checkIfStoppedScrolling, 250)
-    setInterval(typeTitle, 150)
-    setInterval(typeParagraph, 25)
-}
-xhr.send()
