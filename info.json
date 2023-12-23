@@ -25,7 +25,7 @@
         "title": "qt-kunai!",
         "font": "Bangers",
         "image": "https://user-images.githubusercontent.com/42103041/275683636-e85b9420-94cd-4e47-92a1-6723773301ad.png",
-        "description": "{1}\na badusb made with a trinkey QT2040 (hence the name), with an oled added on, for multiple payload support, and to just look cool :)there's a plan to make it look like {0} x",
+        "description": "{1}\na badusb made with a trinkey QT2040 (hence the name), with an oled added on, for multiple payload support, and to just look cool :)\nthere's a plan to make it look like {0} x",
         "html": [
             "<a style=\"display: inline\" href=\"https://shop.ledger.com/products/ledger-nano-x\">a ledger nano</a>",
             "<div class=\"icorow\"><a class=\"hreficon\" href=\"https://github.com/whatotter/qt-kunai\"><i class=\"devicon-github-original\"></i></a></div>"
