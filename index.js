@@ -7,8 +7,8 @@ var currentTransform = 0
 var stillScrolling = false
 
 
-var title = elements[0]["title"]
-var titleFont = elements[0]["font"]
+var title = ""
+var titleFont = "Arial"
 var titleIndex = 0
 var titleOld = ""
 var titleDel = false
@@ -40,7 +40,7 @@ function typeTitle() {
     }
 }
 
-var paragraph = elements[0]["description"]
+var paragraph = ""
 var paragraphIndex=0
 var paragraphOld = ""
 var paragraphDel = false
@@ -216,6 +216,9 @@ xhr.open("GET", "/info.json", true)
 xhr.onload = function() {
     elements = JSON.parse(xhr.responseText)
     console.log("loaded")
+
+    title = elements[0]["title"]
+    paragraph = elements[0]["description"]
 
     setInterval(checkIfStoppedScrolling, 250)
     setInterval(typeTitle, 150)
