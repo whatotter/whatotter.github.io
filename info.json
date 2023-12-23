@@ -45,7 +45,7 @@
     {
         "title": "butane c².",
         "font": "Arial",
-        "image": "https://otterwrks.co/assets/img/jpg/butane.png",
+        "image": "https://github.com/whatotter/butane-c2/assets/42103041/7eb031b5-7156-414d-a1ab-0d338f4efbe5",
         "description": "{0}\na lightweight, multiplayer, http reverse shell C2, with autorun stages - supports ncat, hoaxshell and ssl encrypted reverse shells",
         "html": [
             "<div class=\"icorow\"><a class=\"hreficon\" href=\"https://github.com/whatotter/butane-c2\"><i class=\"devicon-github-original\"></i></a></div>"
