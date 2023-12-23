@@ -43,7 +43,7 @@
     },
 
     {
-        "title": "butane c².",
+        "title": "butane c2.",
         "font": "Arial",
         "image": "https://github.com/whatotter/butane-c2/assets/42103041/7eb031b5-7156-414d-a1ab-0d338f4efbe5",
         "description": "{0}\na lightweight, multiplayer, http reverse shell C2, with autorun stages - supports ncat, hoaxshell and ssl encrypted reverse shells",
@@ -65,7 +65,7 @@
     {
         "title": "casanova",
         "font": "sans-serif",
-        "color": "#121212",
+        "color": "#020202",
         "description": "an ESP32C3 powered RF hacking \"dongle\" that supports rolljam attacks, replay attacks, etc. with two CC1101 modules\nnot on github yet, but will be soon enough :)"
     }
 ]

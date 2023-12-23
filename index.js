@@ -123,11 +123,14 @@ function typeParagraph() {
 }
 
 function handleWheel(event) {
+    // Access scroll information from the event
+    var delta = Math.floor(((event.deltaY || event.detail || event.wheelDelta)*-1));
+    console.log(delta)
+
     if (!doneScrolling) {
         return
     }
-    // Access scroll information from the event
-    var delta = Math.floor(((event.deltaY || event.detail || event.wheelDelta)*-1) / 18);
+
 
     // Do something with the scroll information
 
@@ -190,6 +193,35 @@ function checkIfStoppedScrolling() {
     oldScroll = doneScrolling
 }
 
+document.addEventListener('wheel', handleWheel)
+
+let startY = 0;
+
+document.addEventListener('touchstart', function(e) {
+    startY = e.touches[0].clientY;
+}, false);
+
+document.addEventListener('touchend', function(e) {
+    let endY = e.changedTouches[0].clientY;
+
+    let deltaY = endY - startY;
+
+    let threshold = 10;
+
+    oldScroll = true
+    doneScrolling = true
+
+    if (Math.abs(deltaY) > threshold) {
+        if (deltaY > 0) {
+            // swipe down
+            handleWheel({deltaY: -100})
+        } else {
+            // swipe up
+            handleWheel({deltaY: 100})
+        }
+    }
+}, false);
+
 document.addEventListener("DOMContentLoaded", function() {
     var xhr = new XMLHttpRequest()
     xhr.open("GET", "/info.json", true)
@@ -210,7 +242,7 @@ document.addEventListener("DOMContentLoaded", function() {
             } else {
                 var div = document.createElement("div")
                 div.style.width = "100vw"
-                div.style.height = "100vh"
+                div.style.height = "100.5vh"
                 div.style.backgroundColor = itm["color"]
                 document.getElementById("fullimgs").appendChild(div)
             }
@@ -223,5 +255,4 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     xhr.send()
 
-    document.addEventListener('wheel', handleWheel)
 })

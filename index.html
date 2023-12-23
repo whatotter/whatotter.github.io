@@ -17,7 +17,7 @@
             margin: 0;
             overflow: hidden;
 
-            background-color: #242424;
+            background-color: #020202;
         }
 
         h1,h2,h3,h4,h5,h6,a,p {
@@ -54,9 +54,7 @@
         }
 
         img {
-            width: 100vw;
-
-            max-height: 100vh;
+            height: 100vh;
 
             display: block;
             overflow: hidden;
@@ -97,13 +95,15 @@
             background-color: transparent;
             font-family: 'Arial';
             height: 56px
+
         }
 
         #paragraphbox {
-            margin: 0;
             background-color: transparent;
             font-size: 0.5em;
             font-family: Arial, Helvetica, sans-serif;
+
+            margin: 0 48px;
 
             display: flex;
             flex-direction: column;
@@ -114,7 +114,8 @@
             }
 
         #fullimgs {
-            transition: 1s ease-out
+            transition: 1s ease-out;
+            overflow: hidden;
         }
 
         .blink {
@@ -131,7 +132,18 @@
             }
         }
 
-        
+        @media (min-width:1280px) {
+            img {
+                width: 100vw
+            }
+        }
+
+        @media (max-width:1280px) {
+            img {
+                transform: translateX(-50%);
+                height: 99.5vh;
+            }
+        }
     </style>
 </head>
 <body>

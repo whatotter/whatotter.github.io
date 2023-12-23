@@ -6,4 +6,4 @@ app = Flask(__name__)
 def ind(file):
     return open("./"+file, "r").read()
 
-app.run(port=80)
+app.run(port=80, host="0.0.0.0")
