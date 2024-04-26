@@ -1,183 +1,218 @@
 <!DOCTYPE html>
+
 <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
-          
-    <script src="index.js"></script>
-
-    <title>otter's portfolio</title>
-
     <style>
         body {
-            padding: 0;
             margin: 0;
-            overflow: hidden;
-            overflow-x: hidden;
-            overflow-y: hidden;
+            padding: 0;
 
-            background-color: #020202;
-
-            touch-action:none;
+            height: 100vh;
+            width: 100vw;
         }
 
-        h1,h2,h3,h4,h5,h6,a,p {
+        h1,h2,h3,h4,h5,p,span,a {
+            color: #aaa;
+            word-wrap: break-word;
+
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        a {
+            font-size: 18pt;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .header {
+            position: sticky;
+
+            top: 0;
+            z-index: 999;
+            display: flex;
+            flex-direction: row;
+            background-color: #121212;
+
+            padding: 0 24px
+        }
+
+        .header-obj {
+            border-right: 3px solid #483250;
+            padding: 20px 24px;
+            margin: 0;
+        }
+
+        .header-obj:hover {
+            background-color: #181818;
+        }
+
+        .selected-header {
             color: #eee
         }
 
-        .sidebar {
-            margin-right: -48px;
-        }
-
-        .icorow {
-            display: inline-block;
-            margin: 8px
-        }
-
-        .big {
-            width: 100%;
-            overflow: hidden;
-            height: 102vh;
+        .inlinetext {
             display: flex;
+            padding: 2px 24px;
+            border-right: 3px solid #483250;
+            flex-direction: row;
+            align-content: center;
+        }
+
+        .me {
+            height: 30vh;
+            background-color: #202020;
+            display: flex;
+
+            flex-direction: column;
+
             align-items: center;
-
-            transition: 0.1s ease-in-out;
-
-            padding: 0;
-
-            flex-wrap: nowrap;
-
-        }
-
-        .hreficon {
-            text-decoration: none;
-            font-size: 32px;
-        }
-
-        img {
-            height: 100vh;
-
-            display: block;
-            overflow: hidden;
-            padding: 0;
-
             justify-content: center;
-
-            transition: 0.8s linear;
-
-            filter: brightness(60%);
-
-        }
-            
-
-        .big-center {
-            position: absolute;
-
-            width: 101vw;
-
-            z-index: 99;
-            color: white;
-
-            justify-content: center;
-
             margin: 0;
-
-            text-align: center;
-            font-size: 48px;
-
-            top: 50%;
-
-            font-family: 'Bangers';
-        }
-        
-        #title {
-            letter-spacing: 2px;
-            margin: 8px 0;
-            background-color: transparent;
-            font-family: 'Arial';
-            height: 56px
-
         }
 
-        #paragraphbox {
-            background-color: transparent;
-            font-size: 0.5em;
-            font-family: Arial, Helvetica, sans-serif;
+        .me h1, h3 {
+            margin: 0 0
+        }
 
-            margin: 0 48px;
+        .projects {
+            background-color: #181818;
+            height: 100%;
+            width: 100%;
+            margin: 0;
 
             display: flex;
             flex-direction: column;
         }
-            #paragraphbox p {
-                padding: 0;
-                margin: 0
+
+        .project {
+            height: 25vh;
+            width: 50vw;
+            display: flex;
+
+            align-items: center;
+            flex-direction: row;
+        }
+            .project h2 {
+                margin-bottom: 4px;
+            }
+            .project p, span {
+                margin-top: 4px;
+                width: 45vw;
+            }
+            .project img {
+                width: 55%;
+                margin: 15%;
             }
 
-        #fullimgs {
-            transition: 1s ease-out;
-            overflow: hidden;
-            overflow-x: hidden;
-            overflow-y: hidden;
-            position: absolute;
+        .noimg-project {
+            height: 25vh;
+            width: 50vw;
+            display: flex;
 
-            top: 0;
-            left: 0;
+            align-items: center;
+            flex-direction: row;
+            margin-left: 10%;
         }
-
-        .blink {
-            animation: blinker 1s linear infinite;
-            padding: 0 4px;
-            width: 2px;
-            display: inline-block;
-            transition: 0.1s ease-in-out;
-        }
-
-        @keyframes blinker {
-            50% {
-                opacity: 0;
+            .noimg-project h2 {
+                margin-bottom: 4px;
             }
-        }
-
-        @media (min-width:1280px) {
-            img {
-                width: 100vw
-            }
-        }
-
-        @media (max-width:1280px) {
-            img {
-                transform: translateX(-50%);
-                height: 99.5vh;
-            }
-        }
-
-        @media (pointer:none), (pointer:coarse) {
-            .big-center {
-                margin-left: 32.5%
-                margin-right: 0
+            .noimg-project p, span {
+                margin-top: 4px;
+                width: 45vw;
             }
 
-            img {
-                transform: translateX(-50%);
-                height: 99.5vh;
-            }
-        }
     </style>
 </head>
 <body>
-        <!-- BOO! -->
-    <div class="big-center">
-        <h3 id="title"></h3>
-        
-        <div style="display: flex; flex-direction: column;" id="paragraphbox">
-            <p id="paragraph"></p>
+    <!--i like to gaslight myself i'm getting better at html so i can do this stuff more (i'm not) -->
+    <div class="header">
+        <div class="inlinetext">
+            <img style="margin-top: 15%;" src="https://cdn.discordapp.com/attachments/963252655210266687/1233288999431569489/image-removebg-preview5.png?ex=662c8d62&is=662b3be2&hm=e0234b715b969c520787a921fed91db5e5c4f812391a67f5200af4cfccc42231&" height="24">
+            <h2 style="color: #eee;">otter</h2>
+            <h2 style="color: #5D3FD3;">wrks</h2>
+            <h2 style="color: #eee;">.co</h2>
+        </div>
+
+        <h2 class="header-obj selected-header">
+            projects
+        </h2>
+        <a class="header-obj" href="https://github.com/whatotter">
+            github
+        </a>
+    </div>
+
+    <div class="me">
+        <h1>hi, i'm otter</h1>
+        <h3>15yo fullstack programer, hacker, and novice engineer</h3>
+    </div>
+
+    <div class="projects">
+        <div class="project">
+            <img src="https://user-images.githubusercontent.com/42103041/209862002-9ef1712c-38c5-424d-8017-fc9f119492af.png">
+            <div>
+                <h2>pwnhyve</h2>
+                <p>
+                    originally created to be a pocket-sized development tool, pwnhyve (pronounced p-own-hive) is a hacking tool capable of many things;
+                    from infiltrating wifi to being a tiny logic analyzer to being a poisontap, pwnhyve is super capable, especially for it's 65x30mm size.
+                </p>
+            </div>
+        </div>
+        <div class="project">
+            <img src="https://user-images.githubusercontent.com/42103041/275683636-e85b9420-94cd-4e47-92a1-6723773301ad.png">
+            <div>
+                <h2>qt-kunai</h2>
+                <p>
+                    a keystroke/mouse injection tool with multiple payload support selectable by a 0.96inch OLED, meant to be used as a cheap alternative to the ducky
+                </p>
+            </div>
+        </div>
+
+        <div class="project">
+            <img src="https://cdn.discordapp.com/attachments/963252655210266687/1174549158468784178/image.png">
+            <div>
+                <h2>azamuku</h2>
+                <p>
+                    azamuku is a HTTP-based reverse shell that bypasses windows defender, AMSI, and even malwarebytes (last checked 4/24/24).
+                </p>
+            </div>
+        </div>
+
+        <div class="project">
+            <img src="https://github.com/whatotter/butane-c2/assets/42103041/7eb031b5-7156-414d-a1ab-0d338f4efbe5">
+            <div>
+                <h2>butane-c2</h2>
+                <p>
+                    a lightweight, multiplayer, http reverse shell C2, with autorun stages - supports ncat, hoaxshell and ssl encrypted reverse shells
+                </p>
+            </div>
         </div>
     </div>
 
-    <div id="fullimgs"></div>
+    <div style="border-top: 2px solid #5D3FD3; padding-bottom: 32px; background-color: #181818;">
+    </div>
 
+    <div class="projects">
+        <div style="display: flex; justify-content: center; align-items: center;">
+            <h2>unlisted projects</h2>
+        </div>
+
+        <div class="noimg-project">
+            <div>
+                <h2>casanova</h2>
+                <span>
+                    a radio frequency hacking tool that supports jamming, rolljamming (https://samy.pl/opensesame/) and many other things
+                    <br>
+                    tool is being withheld until patches for some exploits are up
+                </span>
+            </div>
+        </div>
+
+        <div class="noimg-project">
+            <div>
+                <h2>vernier (name TBD)</h2>
+                <p>
+                    the bigger brother to pwnhyve, a full linux system in a nintendo DS with an allwinner SoC, two CC1101s, bluetooth and wifi connectivity, and just about everything else
+                </p>
+            </div>
+        </div>
+    </div>
 </body>
