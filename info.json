@@ -4,7 +4,7 @@
         "title": "otter.",
         "font": "Arial",
         "color": "#020202",
-        "description": "novice penetration tester @ under 16yo\nprogrammer - fullstack developer - somewhat engineer\nscroll down to see my projects :)\n{0}",
+        "description": "novice penetration tester @ 15 yo\nprogrammer - fullstack developer - somewhat engineer\nscroll down to see my projects :)\n{0}",
         "html": [
             "<div class=\"icorow\"><a class=\"hreficon\" href=\"https://github.com/whatotter\"><i class=\"devicon-github-original\"></i></a></div>"
         ]
@@ -14,7 +14,7 @@
         "title": "pwnhyve!",
         "font": "Bangers",
         "image": "https://user-images.githubusercontent.com/42103041/209862002-9ef1712c-38c5-424d-8017-fc9f119492af.png",
-        "description": "{0}\nbased off of both the P4WNP1-AloA and the Flipper Zero, pwnhyve is meant to be a jack-of-all-trades when it comes to pentesting.\nincludes wifi deauth attacks, ble fuzzing, HID injection, plus a plugin system to create what you most desire, ontop of a kali linux system.\n\ncarlos explanation: a little ripoff console that controls basically everything",
+        "description": "{0}\noriginally created to be a pocket-sized development tool, pwnhyve (pronounced p-own-hive) is a hacking tool capable of many things;\nfrom infiltrating wifi to being a tiny logic analyzer to being a poisontap, pwnhyve is super capable, especially for it's 65x30mm size.",
         "html": [
             "<div class=\"icorow\"><a class=\"hreficon\" href=\"https://github.com/whatotter/pwnhyve\"><i class=\"devicon-github-original\"></i></a></div>"
         ]
@@ -25,25 +25,24 @@
         "title": "qt-kunai!",
         "font": "Bangers",
         "image": "https://user-images.githubusercontent.com/42103041/275683636-e85b9420-94cd-4e47-92a1-6723773301ad.png",
-        "description": "{1}\na badusb made with a trinkey QT2040 (hence the name), with an oled added on, for multiple payload support, and to just look cool :)\nthere's a plan to make it look like {0} x\n\ncarlos explanation: a computer typewriter",
+        "description": "{0}\na keystroke/mouse injection tool with multiple payload support selectable by a 0.96inch OLED, meant to be used as a cheap alternative to the ducky",
         "html": [
-            "<a style=\"display: inline\" href=\"https://shop.ledger.com/products/ledger-nano-x\">a ledger nano</a>",
             "<div class=\"icorow\"><a class=\"hreficon\" href=\"https://github.com/whatotter/qt-kunai\"><i class=\"devicon-github-original\"></i></a></div>"
         ]
     },
     
     {
-        "title": "azamuku.",
+        "title": "azamuku",
         "font": "Arial",
         "image": "https://cdn.discordapp.com/attachments/963252655210266687/1174549158468784178/image.png?ex=659623a5&is=6583aea5&hm=f3805a3390e40e6297babcaf7253f155599ba2e9778e71eacfec04e4a57c7f39&",
-        "description": "{0}\n\"fool me once, shame on you - fool me twice, shame on me\"\n\nazamuku is a reverse shell inspired by t3l3machus' hoaxshell that bypasses windows defender, AMSI, and even malwarebytes (as of 11/11/23).\n\ncarlos explanation: a bad boy virus",
+        "description": "{0}\n\nazamuku is a HTTP-based reverse shell that bypasses windows defender, AMSI, and even malwarebytes (last checked 4/24/24).",
         "html": [
             "<div class=\"icorow\"><a class=\"hreficon\" href=\"https://github.com/whatotter/azamuku\"><i class=\"devicon-github-original\"></i></a></div>"
         ]
     },
 
     {
-        "title": "butane c2.",
+        "title": "butane c2",
         "font": "Arial",
         "image": "https://github.com/whatotter/butane-c2/assets/42103041/7eb031b5-7156-414d-a1ab-0d338f4efbe5",
         "description": "{0}\na lightweight, multiplayer, http reverse shell C2, with autorun stages - supports ncat, hoaxshell and ssl encrypted reverse shells",
@@ -66,6 +65,6 @@
         "title": "casanova",
         "font": "sans-serif",
         "color": "#020202",
-        "description": "an ESP32C3 powered RF hacking \"dongle\" that supports rolljam attacks, replay attacks, etc. with two CC1101 modules\nnot on github yet, but will be soon enough :)"
+        "description": "a radio frequency hacking tool that supports jamming, rolljamming (https://samy.pl/opensesame/) and many other things\ntool is being withheld until patches for some exploits are up"
     }
 ]
