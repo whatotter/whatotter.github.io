@@ -197,18 +197,31 @@ body {
 
     .card {
         width: 100vw;
-        height: 69vh;
+        height: 80px;
         margin-bottom: 2.5vw;
+
+        flex-direction: column;
+
     }
 
     .card:hover {
+        height: 50vh;
+        min-height: max-content;
         width: 100vw;
+    }
+
+    .card-text-spacer {
+        width: 0;
     }
 
     .card-main-text {
         font-size: xx-large;
-        width: 10vw;
-        margin-left: 8px;
+        width: 100vw;
+
+        writing-mode: horizontal-tb;
+
+        margin-left: auto;
+        margin-right: auto;
     }
 
 }
