@@ -5,7 +5,6 @@
     
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   
 </head>
 <body>
@@ -45,21 +44,21 @@
         <br>
         <div class="cards-box">
             <div class='card' style="background-image: url('images/pwnhyve-min.png'); ">
-                <h1 class="card-main-text font-bold">pwnhyve</h1>
+                <h1 class="card-main-text">pwnhyve</h1>
                 <div class="card-blur"></div>
                 
                 <div class="card-center">
-                    <h1 class="text-xl font-bold">DIY flipper zero</h1>
+                    <h1>DIY flipper zero</h1>
 
                     <span>
                         a little offensive appliance that mimics some features from the flipper zero and more, under ~$50
                         <br><br>
                         <ul>
                             <li>WiFi hacking - deauth attacks, AP scanning, KARMA attacks, captive portal, evil twin</li>
-                            <li>BLE hacking - using the bettercap suite, you can search for BLE devices and write to their GATT characteristics, <a href="https://www.youtube.com/watch?v=kzRCGxDKPFA">which can open a smart lock</a></li>
-                            <li>USB emulation - KBM emulation for DuckyScript injection, aswell as mass storage device emulation to exfiltrate files</li>
-                            <li>Hak5's keystroke reflection - you can exfiltrate files by bit-banging CapsLock, ScrollLock, and NumLock</li>
-                            <li>RF hacking - replay attacks using a CC1101, using flipper zero .sub files and saving your own, plus FM radio hijacking</li>
+                            <li>BLE hacking - using the bettercap suite, you can search for devices and write GATT characteristics</li>
+                            <li>USB emulation - KBM emulator for DuckyScript, aswell as mass storage to exfiltrate files</li>
+                            <li>Hak5's keystroke reflection - exfiltrate files by bit-banging CapsLock, ScrollLock, and NumLock</li>
+                            <li>RF hacking - replay attacks using a CC1101, aswell as FM radio hijacking</li>
                             <li>GPIO playground - 2 channel 1.5mhz logic analyzer, compatible with sigrok, also a breadboard companion to test LEDs, servos, buzzers, distance sensors, etc.</li>
                         </ul>
                     </span>
@@ -69,11 +68,11 @@
             </div>
     
             <div class='card' style="background-image: url('images/qtkunai.png'); ">
-                <h1 class="card-main-text font-bold">qt-kunai</h1>
+                <h1 class="card-main-text">qt-kunai</h1>
                 <div class="card-blur"></div>
                 
                 <div class="card-center">
-                    <h1 class="text-xl font-bold">cheap, DIY DuckyUSB alternative</h1>
+                    <h1>cheap, DIY DuckyUSB alternative</h1>
 
                     <span>
                         a badusb with a 0.96 inch OLED screen, supporting multiple payloads and mouse control, using a trinkey QT2040 (~$14 USD)
@@ -92,11 +91,11 @@
             </div>
     
             <div class='card' style="background-image: url('images/catwalk.png'); ">
-                <h1 class="card-main-text font-bold">catwalk-c2</h1>
+                <h1 class="card-main-text">catwalk-c2</h1>
                 <div class="card-blur"></div>
                 
                 <div class="card-center">
-                    <h1 class="text-xl font-bold">multi-function command and control center</h1>
+                    <h1>multi-function command and control center</h1>
 
                     <span>CnC that supports dumb/TTY shells, plugins, remote file browsing and downloading, FW/IPS evasion, custom communication protocols, and more</span>
 
@@ -104,11 +103,10 @@
 
                     <ul>
                         <li>have multiple people control the same client at once</li>
-                        <li>extremely modular - make your own custom protocol/encryption or web-controlled plugins</li>
-                        <li>create stages using Jinja2 to run commands on a client with a couple of clicks, or just automatically run specific stages on connection</li>
-                        <li>you can use ncat, netcat, socat, custom shells, PTYs and non-PTYs, so on and so forth</li>
-                        <li>remotely view a client's files, traverse their file system and download files to the C2 that pique your interest</li>
-                        <li>view clients' information at a glance; PC hostname, whoami, MAC address, OUI, and filter through them all</li>
+                        <li>make your own custom protocol/encryption or web-controlled plugins</li>
+                        <li>create stages using Jinja2 to run commands on a client with a couple of clicks</li>
+                        <li>remotely view a client's files, traverse their file system and download files to the C2</li>
+                        <li>view clients' information at a glance; PC hostname, whoami, MAC address</li>
                     </ul>
                     
                     <br>
@@ -118,11 +116,11 @@
             </div>
     
             <div class='card' style="background-image: url('images/azamuku.png'); ">
-                <h1 class="card-main-text font-bold">azamuku</h1>
+                <h1 class="card-main-text">azamuku</h1>
                 <div class="card-blur"></div>
                 
                 <div class="card-center">
-                    <h1 class="text-xl font-bold">multi-client, HTTP based reverse shell</h1>
+                    <h1>multi-client, HTTP based reverse shell</h1>
 
                     <span>azamuku is a reverse shell inspired by t3l3machus' hoaxshell that bypasses windows defender, AMSI, and even malwarebytes (as of 11/11/23).
                         <br><br>
@@ -138,11 +136,11 @@
             </div>
     
             <div class='card'>
-                <h1 class="card-main-text font-bold">argos</h1>
+                <h1 class="card-main-text">argos</h1>
                 <div class="card-blur"></div>
                 
                 <div class="card-center">
-                    <h1 class="text-xl font-bold">argos</h1>
+                    <h1>argos</h1>
 
                     <span>an experimental and unreleased-to-the-public police detector that uses machine learning, computer vision,
                         and external plate searching APIs to look and log police cars on the road, logging

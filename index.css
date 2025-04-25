@@ -85,6 +85,11 @@ body {
 } .header h1 {
     font-size: xx-large;
     font-weight: bold;
+    margin: 0.5vh
+} .header h3 {
+    margin: 0;
+    font-size: 13pt;
+    font-weight: 400;
 }
 
 .inline-text {
@@ -144,6 +149,9 @@ body {
     padding: 24px;
     flex-direction: column;
     z-index: 2;
+} .card-center h1 {
+    font-size: x-large;
+    font-weight: bold;
 }
 
 .card-main-text {
@@ -157,6 +165,7 @@ body {
     align-items: center;
 
     font-size: xx-large;
+    font-weight: bold;
 
 }
 
@@ -167,6 +176,14 @@ body {
 }
 
 @media (max-width: 1000px) {
+
+    .about-me span {
+        max-width: 90vw;
+    }
+    .about-me sub {
+        max-width: 90vw;
+        text-align: center;
+    }
 
     .cards-center {
         height: 100%;
@@ -180,7 +197,7 @@ body {
 
     .card {
         width: 100vw;
-        height: 50vh;
+        height: 69vh;
         margin-bottom: 2.5vw;
     }
 
