@@ -175,7 +175,7 @@ body {
     z-index: 100;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 768px) {
 
     .about-me span {
         max-width: 90vw;
