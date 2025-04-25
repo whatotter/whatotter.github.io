@@ -1,193 +1,180 @@
 <!DOCTYPE html>
 
 <head>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-
-            height: 100vh;
-            width: 100vw;
-        }
-
-        h1,h2,h3,h4,h5,p,span,a {
-            color: #aaa;
-            word-wrap: break-word;
-
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        }
-
-        a {
-            font-size: 18pt;
-            font-weight: bold;
-            text-decoration: none;
-        }
-
-        .header {
-            position: sticky;
-
-            top: 0;
-            z-index: 999;
-            display: flex;
-            flex-direction: row;
-            background-color: #121212;
-
-            padding: 0 24px
-        }
-
-        .header-obj {
-            border-right: 3px solid #483250;
-            padding: 20px 24px;
-            margin: 0;
-        }
-
-        .header-obj:hover {
-            background-color: #181818;
-        }
-
-        .selected-header {
-            color: #eee
-        }
-
-        .inlinetext {
-            display: flex;
-            padding: 2px 24px;
-            border-right: 3px solid #483250;
-            flex-direction: row;
-            align-content: center;
-        }
-
-        .me {
-            height: 30vh;
-            background-color: #202020;
-            display: flex;
-
-            flex-direction: column;
-
-            align-items: center;
-            justify-content: center;
-            margin: 0;
-        }
-
-        .me h1, h3 {
-            margin: 0 0
-        }
-
-        .projects {
-            background-color: #181818;
-            height: 100%;
-            width: 100%;
-            margin: 0;
-
-            display: flex;
-            flex-direction: column;
-        }
-
-        .project {
-            height: 25vh;
-            width: 50vw;
-            display: flex;
-
-            align-items: center;
-            flex-direction: row;
-        }
-            .project h2 {
-                margin-bottom: 4px;
-            }
-            .project p, span {
-                margin-top: 4px;
-                width: 45vw;
-            }
-            .project img {
-                width: 350px;
-                max-height: 500px;
-                margin: 15%;
-            }
-
-        .noimg-project {
-            height: 25vh;
-            width: 50vw;
-            display: flex;
-
-            align-items: center;
-            flex-direction: row;
-            margin-left: 10%;
-        }
-            .noimg-project h2 {
-                margin-bottom: 4px;
-            }
-            .noimg-project p, span {
-                margin-top: 4px;
-                width: 45vw;
-            }
-
-    </style>
+    <link href="index.css" rel="stylesheet" />
+    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  
 </head>
 <body>
-    <!--I AM BETTER AT HTML-->
     <div class="header">
-        <div class="inlinetext">
-            <img style="margin-top: 15%;" src="otter.png" height="24">
-            <h2 style="color: #eee;">otter</h2>
-            <h2 style="color: #5D3FD3;">wrks</h2>
-            <h2 style="color: #eee;">.co</h2>
-        </div>
-
-        <h2 class="header-obj selected-header">
-            projects
-        </h2>
-        <a class="header-obj" href="https://github.com/whatotter">
-            github
-        </a>
-    </div>
-
-    <div class="me">
         <h1>hi, i'm otter</h1>
-        <h3>15yo fullstack programer, hacker, and novice engineer</h3>
-    </div>
-
-    <div class="projects">
-        <div class="project">
-            <img src="https://user-images.githubusercontent.com/42103041/209862002-9ef1712c-38c5-424d-8017-fc9f119492af.png">
-            <div>
-                <h2>pwnhyve</h2>
-                <p>
-                    originally created to be a pocket-sized development tool, pwnhyve (pronounced p-own-hive) is a hacking tool capable of many things;
-                    from infiltrating wifi to being a tiny logic analyzer to being a poisontap, pwnhyve is super capable, especially for it's 65x30mm size.
-                </p>
-            </div>
+        <h3>16yo fullstack programer, hacker</h3>
+        <div class="inline-text">
+            <h3>lead developer of otter<h3 style="color: #5d3fd3">wrks</h3><h3>.co</h3>
         </div>
-        <div class="project">
-            <img src="https://user-images.githubusercontent.com/42103041/275683636-e85b9420-94cd-4e47-92a1-6723773301ad.png">
-            <div>
-                <h2>qt-kunai</h2>
-                <p>
-                    a keystroke/mouse injection tool with multiple payload support selectable by a 0.96inch OLED, meant to be used as a cheap alternative to the ducky
-                </p>
-            </div>
-        </div>
-
-        <div class="project">
-            <img src="https://github.com/whatotter/azamuku/assets/42103041/d084b127-e5c4-48f3-b42f-60266b12e6b4">
-            <div>
-                <h2>azamuku</h2>
-                <p>
-                    azamuku is a HTTP-based reverse shell that bypasses windows defender, AMSI, and even malwarebytes (last checked 4/24/24).
-                </p>
-            </div>
-        </div>
-
-        <div class="project">
-            <img src="https://github.com/user-attachments/assets/83869850-049f-4d07-87ce-e12091b5b7d9">
-            <div>
-                <h2>catwalk-c2</h2>
-                <p>
-                    CnC that supports dumb/TTY shells, plugins, remote file browsing and downloading, FW/IPS evasion, custom communication protocols, and more
-                </p>
-            </div>
+        <div class="inline-text">
+            <h3>lead developer of <h3 style="color: rgb(212, 0, 212); margin-left: 5px;">2real</h3><h3>.ac</h3>
         </div>
     </div>
 
-    <div style="border-top: 2px solid #5D3FD3; padding-bottom: 32px; background-color: #181818;">
+    <div class="split"></div>
+
+    <div class="about-me">
+        <h1>about me</h1>
+        <span>
+            i'm otter, and i specialize in cybersecurity and fullstack programming
+            <br><br>
+            i began in the 7th grade (12yo) with cybersecurity after being inspired by NetworkChuck and some online friends who were majoring in cybersecurity, and it's been a slippery slope since then 🙃
+            <br><br>
+            i have multiple programming languages under my belt; python, lua, golang, C++, bash, javascript/nodejs
+            <br><br>
+            being in cybersecurity also means you have to learn stuff like server routing, OSI layers, (K)ASLR, memory management, cryptography, buffer overflows, protocols, fuzzing, NOP sleds, etc. so those are also under my belt aswell
+        </span>
+        <br>
+        <sub>P.S. a lot of my projects are cybersecurity related, but i don't post all of them :)</sub>
+    </div>
+
+    <div class="split"></div>
+    <div class="split"></div>
+
+    <div class="cards-center">
+        <h1 class="cards-center-h1">projects</h1>
+        <br>
+        <div class="cards-box">
+            <div class='card' style="background-image: url('images/pwnhyve-min.png'); ">
+                <h1 class="card-main-text font-bold">pwnhyve</h1>
+                <div class="card-blur"></div>
+                
+                <div class="card-center">
+                    <h1 class="text-xl font-bold">DIY flipper zero</h1>
+
+                    <span>
+                        a little offensive appliance that mimics some features from the flipper zero and more, under ~$50
+                        <br><br>
+                        <ul>
+                            <li>WiFi hacking - deauth attacks, AP scanning, KARMA attacks, captive portal, evil twin</li>
+                            <li>BLE hacking - using the bettercap suite, you can search for BLE devices and write to their GATT characteristics, <a href="https://www.youtube.com/watch?v=kzRCGxDKPFA">which can open a smart lock</a></li>
+                            <li>USB emulation - KBM emulation for DuckyScript injection, aswell as mass storage device emulation to exfiltrate files</li>
+                            <li>Hak5's keystroke reflection - you can exfiltrate files by bit-banging CapsLock, ScrollLock, and NumLock</li>
+                            <li>RF hacking - replay attacks using a CC1101, using flipper zero .sub files and saving your own, plus FM radio hijacking</li>
+                            <li>GPIO playground - 2 channel 1.5mhz logic analyzer, compatible with sigrok, also a breadboard companion to test LEDs, servos, buzzers, distance sensors, etc.</li>
+                        </ul>
+                    </span>
+
+                    <a href="https://github.com/whatotter/pwnhyve">GitHub page</a>
+                </div>
+            </div>
+    
+            <div class='card' style="background-image: url('images/qtkunai.png'); ">
+                <h1 class="card-main-text font-bold">qt-kunai</h1>
+                <div class="card-blur"></div>
+                
+                <div class="card-center">
+                    <h1 class="text-xl font-bold">cheap, DIY DuckyUSB alternative</h1>
+
+                    <span>
+                        a badusb with a 0.96 inch OLED screen, supporting multiple payloads and mouse control, using a trinkey QT2040 (~$14 USD)
+                        
+                        <br>
+
+                        <sub>not much here...</sub>
+                        <sub>technically could double as a FIDO key, since it's an RP2040</sub>
+                    
+                    </span>
+
+                    <br>
+
+                    <a href="https://github.com/whatotter/qt-kunai">GitHub page</a>
+                </div>
+            </div>
+    
+            <div class='card' style="background-image: url('images/catwalk.png'); ">
+                <h1 class="card-main-text font-bold">catwalk-c2</h1>
+                <div class="card-blur"></div>
+                
+                <div class="card-center">
+                    <h1 class="text-xl font-bold">multi-function command and control center</h1>
+
+                    <span>CnC that supports dumb/TTY shells, plugins, remote file browsing and downloading, FW/IPS evasion, custom communication protocols, and more</span>
+
+                    <br>
+
+                    <ul>
+                        <li>have multiple people control the same client at once</li>
+                        <li>extremely modular - make your own custom protocol/encryption or web-controlled plugins</li>
+                        <li>create stages using Jinja2 to run commands on a client with a couple of clicks, or just automatically run specific stages on connection</li>
+                        <li>you can use ncat, netcat, socat, custom shells, PTYs and non-PTYs, so on and so forth</li>
+                        <li>remotely view a client's files, traverse their file system and download files to the C2 that pique your interest</li>
+                        <li>view clients' information at a glance; PC hostname, whoami, MAC address, OUI, and filter through them all</li>
+                    </ul>
+                    
+                    <br>
+
+                    <a href="https://github.com/whatotter/catwalk">GitHub page</a>
+                </div>
+            </div>
+    
+            <div class='card' style="background-image: url('images/azamuku.png'); ">
+                <h1 class="card-main-text font-bold">azamuku</h1>
+                <div class="card-blur"></div>
+                
+                <div class="card-center">
+                    <h1 class="text-xl font-bold">multi-client, HTTP based reverse shell</h1>
+
+                    <span>azamuku is a reverse shell inspired by t3l3machus' hoaxshell that bypasses windows defender, AMSI, and even malwarebytes (as of 11/11/23).
+                        <br><br>
+                        its also expected to bypass firewalls that are meant to block hoaxshell's beaconing and post requests, even if that same firewall manually inspected each HTTP(S) packet
+                        <br><br>
+                        its also meant to trick sysadmins that are manually inspecting traffic, due to the alternating endpoints and commands being wrapped in normal HTML pages
+                    </span>
+                    
+                    <br>
+
+                    <a href="https://github.com/whatotter/azamuku">GitHub page</a>
+                </div>
+            </div>
+    
+            <div class='card'>
+                <h1 class="card-main-text font-bold">argos</h1>
+                <div class="card-blur"></div>
+                
+                <div class="card-center">
+                    <h1 class="text-xl font-bold">argos</h1>
+
+                    <span>an experimental and unreleased-to-the-public police detector that uses machine learning, computer vision,
+                        and external plate searching APIs to look and log police cars on the road, logging
+                        them on SABRE / highway radar, <sub>so you can go fast :)</sub>
+                        <br>
+                    </span>
+                    
+                    <br>
+
+                    <ul>
+                        <li>
+                            cameras all over the car - rear, rear left & right, front left & right
+                        </li>
+                        <li>
+                            uses RPi4 as brain, RPi02W for cameras and computer vision
+                        </li>
+                        <li>
+                            connects to Uniden BLE scanners
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="split"></div>
+
+    <div class="footer">
+        <div class="socials">
+            <a class="social-icon" href="https://github.com/whatotter"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="#999" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></a>
+        </div>
+        <div class="split"></div>
+        <h1>otter © 2025</h1>
     </div>
 </body>
