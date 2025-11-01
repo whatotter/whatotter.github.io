@@ -1,227 +1,342 @@
-@import "tailwindcss";
-
 * {
     box-sizing: border-box;
-
+    scroll-behavior: smooth;
 }
 
-h1,h2,h3,h4,h5,h6,span,ul,li,p,a,sub {
-    color: #999;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+:root {
+    --island-edge-margin: 3vw;
+    --island-top-margin: 40vh; /* six sayven */
+    --bubble-margin-right: 0px;
+    --description-max-vh: 17vh
 }
-
-a {
-    text-decoration: underline;
-}
-
-li {
-    list-style-type: circle;
-  }
 
 body {
     margin: 0;
-    padding: 0;
-    background-color: #060606;
+    overflow-x: hidden;
+    background-color: #000;
+}
+
+h1,h2,h3,h4,h5,h6,p,span,input,ul,li,a {
+    color: #ccc;
+    font-family: inter;
+}
+
+svg {
+    color: #ccc;
+}
+
+.screen-body {
+    height: max-content;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
+} .screen-body img {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    flex-shrink: 0;
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    transition: 0.4s;
+    filter: brightness(0.7);
+} .screen-body img:first-child {
+    opacity: 1;
 }
 
-.split {
-    width: 100%;
-    height: 5vh;
-}
-
-.about-me {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-} .about-me h1 {
-    font-size: x-large;
-} .about-me span {
-    text-align: center;
-    max-width: 50vw;
-}
-
-.social-icon {
-    height: 32px;
-    width: 32px;
-}
-
-.footer {
-    height: 15vh;
-    background-color: #090909;
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-    padding: 2%
-} .footer h1 {
-    font-size: large;
-}
-
-.socials {
+.logo-stack {
     display: flex;
     flex-direction: row;
-    height: 32px;
-    width: 25vw;
     justify-content: center;
     align-items: center;
+    gap: 0;
+} .logo-stack * {
+    margin: 0 !important;
+    padding: 0 !important;
+} .logo-stack .purple {
+    color: #5c3fd1;
 }
 
 .header {
-    height: 30vh;
-    background-color: #121212;
+    position: absolute;
+    z-index: 67; /* six sayven */
     display: flex;
-
-    flex-direction: column;
-
+    
+    flex-direction: row;
+    /*justify-content: space-between;*/
     align-items: center;
-    justify-content: center;
-    margin: 0;
-} .header h1 {
-    font-size: xx-large;
-    font-weight: bold;
-    margin: 0.5vh
-} .header h3 {
-    margin: 0;
-    font-size: 13pt;
-    font-weight: 400;
+
+    width: 100vw;
+    padding: 8px var(--island-edge-margin);
 }
 
-.inline-text {
+.header-island {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    padding: 8px 12px;
+    height: 100%;
+    min-width: 15vw;
+    min-height: 5vh;
+
+    margin-right: auto;
+    
+} .header-island h1 {
+    margin: 4px 4px
 }
 
-.cards-center {
+.icon-stack {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    gap: 8px;
+    flex-grow: 1;
+} .icon-stack a {
+    display: flex;
     justify-content: center;
     align-items: center;
-} .cards-center-h1 {
-    font-size: xx-large;
-    font-weight: 500;
+    flex-grow: 1;
+} .icon-stack svg:hover {
+    transform: scale(1.1);
+} .icon-stack svg {
+    transition: 0.2s;
 }
 
-.cards-box {
+.button-stack {
     display: flex;
-    height: 500px;
-    width: 69vw;
-}
-
-.card {
-    width: 20%; /* 100 / amount of elemnts */
+    flex-direction: row;
+    flex-grow: 1;
     height: 100%;
-    transition: 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+} .button-stack h3 {
     display: flex;
-    overflow: hidden;
+    justify-content: center;
+    align-items: center;
     margin: 0;
-    background-color: #0a0a0a;
-    background-size: cover; 
-    background-position: center;
-    position: relative;
-    flex-shrink: 2;
-
-} .card:hover {
-    width: 75vw;
-    backdrop-filter: unset;
-} .card h1 {
-    z-index: 2;
-}
-
-.card-blur {
-    position: absolute;
-    left: 0;
-    backdrop-filter: blur(4px) brightness(0.4); 
+} .button-stack-individual {
+    flex-grow: 1;
+    z-index: 10;
+    width: 6vw;
+    cursor: pointer;
     height: 100%;
-    width: 105%;
-    z-index: 1;
+    transition: 0.2s;
+} .button-stack-individual:hover {
+    transform: scale(1.05);
+}
+.button-stack-bubble {
+    position: absolute;
+    display: flex;
+    width: 6vw;
+    z-index: 5;
+
+    padding: 0px 16px;
+    border-radius: 12px !important;
+
+    top: 0.5vh;
+    height: calc(100% - 1vh);
+
+    transition: 0.3s;
 }
 
-.card-center {
+.left-island {
+    width: min-content;
+    height: min-content;
+    padding-right: 1.5vw;
     display: flex;
-    align-items: center;
-    width: 100%;
-    padding: 24px;
-    flex-direction: column;
-    z-index: 2;
-} .card-center h1 {
-    font-size: x-large;
-    font-weight: bold;
-}
-
-.card-main-text {
-    display: flex;
-    writing-mode:vertical-rl;
-    width: 125%;
-    max-width: 256px;
-    flex-shrink: 0.2;
-
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-
-    font-size: xx-large;
-    font-weight: bold;
-
 }
 
-.card-text-spacer {
-    width: 250px;
+.right-island {
+    margin-right: inherit;
+}
+
+.glass {
+    /* From https://css.glass */
+    background: rgba(59, 59, 59, 0.22);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8.5px);
+    -webkit-backdrop-filter: blur(8.5px);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+
+    display: flex;
+    flex-direction: column;
     flex-shrink: 0;
-    z-index: 100;
+
+    height: max-content;
+    width: 100vw;
+    height: 100vh;
+    z-index: 15;
+
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+#down-chevron {
+    transition: 0.25s cubic-bezier(1,0,.07,1);
+} #down-chevron[bounce] {
+    transform: translateY(4px);
+}
+
+.center-text {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.big-text {
+    font-size: 24pt;
+}
+
+.down-overlay {
+    position: absolute;
+    bottom: 2vh;
+
+    display: flex;
+    width: 100vw;
+    z-index: 20;
+    
+    justify-content: center;
+    align-items: center ;
+} .down-overlay svg {
+    cursor: pointer;
+}
+
+.overlay-page {
+    height: 100vh;
+    width: 100vw;
+    flex-shrink: 0;
+}
+
+.products {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    width: 100vw;
+}
+
+.product-island {
+    padding: 8px 12px;
+} .product-island h1 {
+    margin: 0;
+}
+
+ul ul {
+    margin: 0 !important;
+}
+
+.product-features {
+    margin-top: calc(0vh + var(--island-top-margin));
+    width: 30%;
+    height: 50%;
+    margin-left: var(--island-edge-margin);
+    overflow-y: scroll;
+    scrollbar-width: none;
+} .product-features h1 {
+    font-size: 20pt
+} .product-features p {
+    text-align: left;
+    margin: 8px 0;
+} .product-features ul {
+    margin: 8px 0;
+} .product-features-box {
+    height: 102.5%;
+}
+
+.product-description {
+    position: absolute;
+    
+    margin-top: calc(0vh + var(--island-top-margin));
+    transition: 0.67s;
+
+    right: var(--island-edge-margin);
+    width: 30%;
+    height: 30%;
+
+    overflow-y: scroll;
+    scrollbar-width: none;
+} .product-description h1 {
+    font-size: 40pt;
+    font-weight: 700;
+} .product-description-box {
+    height: 102.5%;
+}
+
+.product-button-stack {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 12px;
+    padding: 8px;
+}
+
+@font-face {
+    font-family: inter;
+    src: url("./fonts/inter.ttf");
 }
 
 @media (max-width: 768px) {
-
-    .about-me span {
-        max-width: 90vw;
+    :root {
+        --island-top-margin: 10vh;
+        --description-max-vh: 0vh
     }
-    .about-me sub {
-        max-width: 90vw;
+
+    .middle-island {
+        display: none; /* mobile users don't deserve the middle island muahahaha */
+    }
+
+    .left-island {
+        margin-right: 0;
+        padding: 0;
+        padding-right: 14px;
+    }
+
+    .right-island {
+        margin: 0;
+    }
+
+    .header-island {
+        min-height: 6vh;
+    }
+
+    .logo-stack * {
+        font-size: 20pt;
+    }
+
+    .header {
+        justify-content: space-between;
+    }
+
+    .product-description {
+        width: calc(96.5vw - var(--island-edge-margin));
+        height: 46pt;
+    } .product-description h1 {
         text-align: center;
+        font-size: 28pt;
+    } .product-description span {
+        display: none;
+    } .product-description-box {
+        height: 46pt;
     }
 
-    .cards-center {
-        height: 100%;
+    .product-features {
+        margin-top: calc(46pt + 2vh + var(--island-top-margin));
+        width: calc(96.5vw - var(--island-edge-margin));
+        height: 70vh;
+    } .product-features h1 {
+        text-align: center;
+    } .product-features p,ul,li {
+        font-size: 11pt;
     }
-
-    .cards-box {
-        flex-direction: column;
-        width: 100%;
-        height: 100%;
-    }
-
-    .card {
-        width: 100vw;
-        height: 80px;
-        margin-bottom: 2.5vw;
-
-        flex-direction: column;
-
-    }
-
-    .card:hover {
-        height: 50vh;
-        min-height: max-content;
-        width: 100vw;
-    }
-
-    .card-text-spacer {
-        width: 0;
-    }
-
-    .card-main-text {
-        font-size: xx-large;
-        width: 100vw;
-
-        writing-mode: horizontal-tb;
-
-        margin-left: auto;
-        margin-right: auto;
-    }
-
 }
