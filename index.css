@@ -154,11 +154,12 @@ svg {
 
 .glass {
     /* From https://css.glass */
-    background: rgba(59, 59, 59, 0.22);
+    background: rgba(59, 59, 59, 0.276);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(8.5px);
-    -webkit-backdrop-filter: blur(8.5px);
+    backdrop-filter: blur(max(1.1pc,min(1.389vw,26.6px)));
+    -webkit-backdrop-filter: blur(max(1.1pc,min(1.389vw,26.6px)));
+    border: 1px solid rgba(59, 59, 59, 0.3);
 }
 
 .overlay {
