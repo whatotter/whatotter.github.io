@@ -32,6 +32,9 @@
                 <div id="fast-main" class="button-stack-individual">
                     <h3>Main</h3>
                 </div>
+                <div id="fast-accolades" class="button-stack-individual">
+                    <h3>Accolades</h3>
+                </div>
                 <div id="fast-projects" class="button-stack-individual">
                     <h3>Projects</h3>
                 </div>
@@ -60,6 +63,7 @@
 
     <div class="screen-body" id="screen-body">
         <img for="main" style="filter: blur(6px) brightness(0.4);" src="test.png">
+        <img for="accolades" style="filter: blur(6px) brightness(0.4);" src="test.png">
         <img for="graphite" src="images/graphite.png">
         <img for="pwnhyve" src="images/pwnhyve.png">
         <img for="azamuku" src="images/azamuku.png">
@@ -85,6 +89,41 @@
                 </span>
             </div>
         </div>
+        <div class="overlay-page">
+            <div class="center-text">
+                <div id="accolades">                    
+                    <div class="accolade-line"></div>
+                    <div class="accolade">
+                        <div class="accolade-button"></div>
+                        <div class="accolade-text">
+                            <h1>hacked my school (Q1 2023)</h1>
+                            <span>hacked my school district (~50 different schools) in 8th grade; gained access to hundreds of linux+windows boxes, across many different schools, through a vuln chain.<br><br>used hashcat, jtr, responder, and some custom developed tools i created just for this<br><br>created a writeup in an hour or so, leading to everything being fixed by the end of the school day</span>
+                        </div>
+                    </div>
+                    <div class="accolade">
+                        <div class="accolade-button"></div>
+                        <div class="accolade-text">
+                            <h1>bypassed windows AMSI (Q4 2023)</h1>
+                            <span>created a reverse shell that still bypasses windows defender, AMSI, and most DPI firewalls, as well as a malleable command-and-control framework with support for many many payloads</span>
+                        </div>
+                    </div>
+                    <div class="accolade">
+                        <div class="accolade-button"></div>
+                        <div class="accolade-text">
+                            <h1>hacked into my school, <i>again</i> (Q4 2023)</h1>
+                            <span>hacked into my school's network, again, using SMBGhost on outdated windows clients and responder. used credentials to move vertically and horizontally across the network, leaving me with <b>terabytes</b> of student/teacher data. reported and fixed within a day</span>
+                        </div>
+                    </div>
+                    <div class="accolade">
+                        <div class="accolade-button"></div>
+                        <div class="accolade-text">
+                            <h1>hacked into a mail server (Q1 2024)</h1>
+                            <span>hacked into a real, public mail server using SQL injection. had access to thousands of important company emails, then found an XSS vulnerability in the software itself on accident. reported both and got rewarded with a mcdonalds giftcard</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="overlay-page products">
             <div id="product-features" class="glass product-island product-features">
                 <div class="product-features-box" for="graphite-description">
@@ -92,10 +131,10 @@
                     <p>
                         Graphite is an intermediary framework that taps into your vehicle's CANBUS network, allowing you to datalog, view vehicle data, and integrate modifications tightly with your vehicle.
                         <ul>
-                            <li>Modular - add virtual modules as you wish</li>
+                            <li>Modular - add virtual and real modules as you wish</li>
                             <li>Standalone - connect once and never worry again</li>
                             <li>Graph vehicle data - RPM, throttle, etc.</li>
-                            <li>Extremely low latency (~2ms)</li>
+                            <li>Extremely low latency (<1ms)</li>
                             <li>Complete data logger for the track</li>
                             <li>Tune your mods through the provided WebUI
                                 <ul>

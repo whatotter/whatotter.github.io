@@ -1,7 +1,7 @@
 var ableToScroll = true
 var scrollTimeout = 500
 
-const pages = ["description", "products"]
+const pages = ["description", "accolades", "products"]
 var amountOfProducts = 999
 var currentProductIndex = 0
 var currentPageIndex = 0
@@ -9,6 +9,9 @@ var currentPageIndex = 0
 const descriptionMinimumVH = 0
 var descriptionCurrentVH = 0
 var descriptionMaximumVH = 17
+
+var amountOfAccolades = 999
+var currentAccolade = 0
 
 function getFeatureHeight() {
     const domrect = document.getElementById("product-features").firstElementChild.getBoundingClientRect()
@@ -138,6 +141,13 @@ function scrollUp(){
                 scrollPage("up")
             }
 
+        } else if (pages[currentPageIndex] == "accolades") {
+            if (currentAccolade > 0) {
+                currentAccolade -= 1
+                highlightAccolade(currentAccolade)
+            } else {
+                scrollPage("up")
+            }
         } else {
             scrollPage("up")
         }
@@ -180,6 +190,14 @@ function scrollDown(){
             } else {
                 scrollPage("down")
             }
+            
+        } else if (pages[currentPageIndex] == "accolades") {
+            if (amountOfAccolades > currentAccolade) {
+                highlightAccolade(currentAccolade)
+                currentAccolade += 1
+            } else {
+                scrollPage("down")
+            }
         } else {
             scrollPage("down")
         }
@@ -189,6 +207,21 @@ function scrollDown(){
 
         ableToScroll = false
         setTimeout(function(){ableToScroll = true}, scrollTimeout)
+    }
+}
+
+function highlightAccolade(index) {
+    const accoladeElements = document.getElementById("accolades").querySelectorAll("[class='accolade']")
+
+    if (accoladeElements.length >= index) {
+        for (let i = 0; i < accoladeElements.length; i++) {
+            const element = accoladeElements[i];
+            if (i == index) {
+                 element.querySelector("[class='accolade-button']").setAttribute("huge", true)
+            } else {
+                 element.querySelector("[class='accolade-button']").removeAttribute("huge")
+            }
+        }
     }
 }
 
@@ -299,6 +332,8 @@ document.addEventListener("DOMContentLoaded", function(){
         }
     });
 
+    amountOfAccolades = document.getElementById("accolades").querySelectorAll("[class='accolade']").length
+
     // chevron
     document.getElementById("down-chevron").addEventListener("transitionend", e=>{
         document.getElementById("down-chevron").removeAttribute("bounce")
@@ -312,10 +347,14 @@ document.addEventListener("DOMContentLoaded", function(){
         updateBubble(0)
         toPage(0)
     })
-    document.getElementById("fast-projects").addEventListener("click", function(){
+    document.getElementById("fast-accolades").addEventListener("click", function(){
         updateBubble(1)
-        toProject(0)
         toPage(1)
+    })
+    document.getElementById("fast-projects").addEventListener("click", function(){
+        updateBubble(2)
+        toProject(0)
+        toPage(2)
     })
     //document.getElementById("fast-footer").addEventListener("click", function(){
     //    updateBubble(2)
@@ -328,4 +367,5 @@ document.addEventListener("DOMContentLoaded", function(){
     updateBubble(0)
 
     console.log(`total products: ${amountOfProducts}`)
+    console.log(`total accolades: ${amountOfAccolades}`)
 })

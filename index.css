@@ -282,6 +282,52 @@ ul ul {
     padding: 8px;
 }
 
+#accolades {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    height: 60vh;
+    gap: 32px;
+}
+
+.accolade-line {
+    position: absolute;
+    height: 60vh;
+    width: 2px;
+    background-color: #ccc;
+    margin-left: calc(12px + 6px - 1px); /* intiial width of bubble + margin-left of bubble - half width of line */
+}
+
+.accolade {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+} .accolade h1 {
+    margin: 2px 0;
+} .accolade-button {
+    background-color: #ccc;
+
+    margin: 0px 12px;
+    margin-left: 6px;
+    width: 24px;
+    height: 24px;
+    border-radius: 12px;
+
+    transition: 0.4s cubic-bezier(0.86, 0, 0.07, 1);
+    flex: none;
+} .accolade-button[huge]{
+    margin: 0px 16px;
+    margin-left: -6px;
+    width: 48px;
+    height: 48px;
+    border-radius: 24px;
+} .accolade-text {
+    display: flex;
+    flex-direction: column;
+}
+
 @font-face {
     font-family: inter;
     src: url("./fonts/inter.ttf");
