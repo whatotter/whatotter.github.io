@@ -1,7 +1,7 @@
 var ableToScroll = true
 var scrollTimeout = 500
 
-const pages = ["description", "accolades", "products"]
+const pages = ["description", "products"]
 var amountOfProducts = 999
 var currentProductIndex = 0
 var currentPageIndex = 0
